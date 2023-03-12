@@ -43,6 +43,8 @@ The output of the above python code is a ```.mp4``` file stored in the folder ``
 
 **The following works on synthetically generated data but in general ,it is possible to use any dataset of your choice after certain cosmetic changes in the relevant parts of the code.**
 
+Link to sample data corresponding to step 3: https://drive.google.com/drive/folders/1zKjVDz-YaB2eF5DejDLMigOodpF_T-2Z?usp=sharing
+
 1. 
 ```
 cd IROS_repo_comparison
