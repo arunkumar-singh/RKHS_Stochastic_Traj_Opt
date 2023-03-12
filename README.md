@@ -38,3 +38,46 @@ python main_reduced.py --ydes_1 ${float} --ydes_2 ${float} --prob {float between
 ```
 
 The output of the above python code is a ```.mp4``` file stored in the folder ```IROS_repo_reduced/videos/```.The video shows an animation of the reduced set sample selection and the associated cross-entropy cost.
+
+### 2. Comparison with baseline [6]
+
+**The following works on synthetically generated data but in general ,it is possible to use any dataset of your choice after certain cosmetic changes in the relevant parts of the code.**
+
+1. 
+```
+cd IROS_repo_comparison
+```
+
+2. To reproduce the comparison shown in the video we use the data stored in ```sample_data``` folder.
+```
+python visualize_sample_data_ours.py
+python visualize_sample_data_baseline.py
+```
+The outputs of the above python codes are two ```.mp4``` files stored in ```IROS_repo_comparison/videos/```.The videos show animations of the planner output trajectories corresponding to our approach and that of [6].
+
+3. It is possible to generate fresh synthetic data by running the script ```data_generation.py```
+```
+python data_generation.py
+```
+
+The script has certain modifiable parameters to generate data.Please see the comments in the script for further information. The output data is stored in the folder ```data_synthetic```.Each data file contains an obstacle configuration and collection of possible trajectories of the obstacle.
+
+Once the data is generated , run:
+```
+python comparison.py
+```
+This will run the optimizers for [6] and our approach on all the data files in ```data_synthetic``` folder and the resulting output files,which we again call as data files,are stored in ```data_comparison``` folder. Each data file contains trajectory information of the ego vehicle corresponding to approach of [6] and our approach.
+
+Now that we have the optimizer/planner output we can run comparisons between the [6] and our approach. We calculate the ```average number of collision-free trajectories``` for the two approaches for each data file in ```data_comparison``` folder. 
+```
+python stats_comparison.py
+```
+The output of the above script is ```stats_overall.txt``` which is stored in ```data_comparison``` folder. The file contains information about the performance of the two approaches in terms of ```average number of collision-free trajectories```.
+
+Finally,to visualize the comparison in terms of ```box``` and ```violin``` plots run:
+```
+python plotting_box_plots.py
+```
+
+
+
