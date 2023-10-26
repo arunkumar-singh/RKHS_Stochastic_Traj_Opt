@@ -1,5 +1,5 @@
 # RKHS_Stochastic_Traj_Opt
-Repository associated with our IROS 2023 submission. The repo contains trajectory optimizers for planning under multi-modal uncertainty.
+Repository associated with our IROS 2023 submission https://arxiv.org/abs/2310.08270. The repo contains trajectory optimizers for planning under multi-modal uncertainty.
 
 https://user-images.githubusercontent.com/28586183/224532357-d03872ac-7825-48c6-80fb-3043d68ecf01.mp4
 
